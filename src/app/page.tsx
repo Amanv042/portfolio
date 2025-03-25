@@ -10,7 +10,7 @@ import { charm } from "@/lib/Fonts";
 export default function Home() {
 	return (
 		<>
-			<div className="grid place-content-center h-screen">
+			<div className="grid place-content-center h-screen px-6 lg:px-0">
 				<div className="space-y-2">
 					<h1>
 						<SplitText
