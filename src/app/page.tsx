@@ -7,8 +7,8 @@ import ShinyText from "@/components/ui/ShinyText";
 import SplitText from "@/components/ui/SplitText";
 
 const texts = [
-	"HTML CSS SCSS SASS JAVASCRIPT REACT.JS TAILWIND BOOTSTRAP SHADCN",
-	"NODE.JS EXPRESS.JS MONGODB POSTGRES MYSQL AUTHENTICATION USER-MANAGEMENT",
+	"HTML CSS SCSS SASS JAVASCRIPT REACT.JS TAILWIND BOOTSTRAP SHADCN MATERIALUI ZOD",
+	"NODE.JS EXPRESS.JS MONGODB POSTGRES MYSQL AUTHENTICATION USER-MANAGEMENT ENCRYPTION RENDER",
 ];
 
 export default function Home() {
@@ -40,7 +40,7 @@ export default function Home() {
 							</div>
 							<FadeContent
 								duration={1700}
-								delay={1100}
+								delay={2000}
 							>
 								<div className="lg:text-2xl text-wrap">
 									Feel free to connect with me on{" "}
@@ -75,14 +75,11 @@ export default function Home() {
 							</FadeContent>
 						</div>
 
-						{/* <div className="my-12">
-							
-						</div> */}
 						<div className="absolute left-0 bottom-8">
 							<ScrollVelocity
 								texts={texts}
 								velocity={30}
-								className="custom-scroll-text"
+								className="text-[rgba(255,255,255,0.1)]"
 							/>
 						</div>
 					</div>
