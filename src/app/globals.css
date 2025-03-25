@@ -112,6 +112,10 @@
 	--sidebar-ring: oklch(0.552 0.016 285.938);
 }
 
+@theme {
+	--font-meow-script: var(--font-meow-script);
+}
+
 @layer base {
 	* {
 		@apply border-border outline-ring/50;
@@ -123,6 +127,13 @@
 
 .custom-container {
 	@apply lg:max-w-[80%] lg:p-0 max-w-full mx-auto px-2;
+}
+
+.text-cyan {
+	@apply text-cyan-300;
+}
+.bg-cyan {
+	@apply bg-cyan-300;
 }
 
 @keyframes shine {
