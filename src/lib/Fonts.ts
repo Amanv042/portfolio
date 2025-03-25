@@ -1,4 +1,4 @@
-import { Meow_Script, Poppins } from "next/font/google";
+import { Charm, Poppins } from "next/font/google";
 
 export const poppins = Poppins({
 	variable: "--font-poppins",
@@ -6,8 +6,7 @@ export const poppins = Poppins({
 	subsets: ["latin"],
 });
 
-export const meow_script = Meow_Script({
-	variable: "--font-meow-script",
-	weight: ["400"],
+export const charm = Charm({
+	weight: ["400", "700"],
 	subsets: ["latin"],
 });

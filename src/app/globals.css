@@ -113,7 +113,7 @@
 }
 
 @theme {
-	--font-meow-script: var(--font-meow-script);
+	--font-charm: var(--font-charm);
 }
 
 @layer base {

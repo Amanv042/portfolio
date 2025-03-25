@@ -8,7 +8,7 @@ export default function Navbar() {
 					href="/"
 					className="inline-block text-2xl"
 				>
-					Aman<span className="text-cyan font-bold">X</span>treme
+					code<span className="text-cyan font-bold">by</span>aman
 				</Link>
 			</div>
 			<div></div>
