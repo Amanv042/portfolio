@@ -3,15 +3,19 @@ import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "motion/react";
 import React, { useRef, useState, useEffect } from "react";
 
-export const BackgroundBeamsWithCollision = ({
+interface BackgroundBeamsWithCollisionProps {
+	children: React.ReactNode;
+	className?: string;
+}
+export const BackgroundBeamsWithCollision: React.FC<BackgroundBeamsWithCollisionProps> = ({
 	children,
 	className,
 }: {
 	children: React.ReactNode;
 	className?: string;
 }) => {
-	const containerRef = useRef<HTMLDivElement>(null);
-	const parentRef = useRef<HTMLDivElement>(null);
+	const containerRef = useRef<HTMLDivElement>(null!);
+	const parentRef = useRef<HTMLDivElement>(null!);
 
 	const beams = [
 		{
@@ -75,9 +79,9 @@ export const BackgroundBeamsWithCollision = ({
 				className
 			)}
 		>
-			{beams.map((beam) => (
+			{beams.map((beam, index) => (
 				<CollisionMechanism
-					key={beam.initialX + "beam-idx"}
+					key={`${beam.initialX}-beam-${index}`}
 					beamOptions={beam}
 					containerRef={containerRef}
 					parentRef={parentRef}

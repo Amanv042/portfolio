@@ -2,7 +2,20 @@
 import { useSprings, animated } from "@react-spring/web";
 import { useEffect, useRef, useState } from "react";
 
-const SplitText = ({
+interface SplitTextProps {
+	text?: string;
+	className?: string;
+	delay?: number;
+	animationFrom?: Record<string, any>;
+	animationTo?: Record<string, any>;
+	easing?: string;
+	threshold?: number;
+	rootMargin?: string;
+	textAlign?: React.CSSProperties["textAlign"];
+	onLetterAnimationComplete?: () => void;
+}
+
+const SplitText: React.FC<SplitTextProps> = ({
 	text = "",
 	className = "",
 	delay = 100,
@@ -17,15 +30,17 @@ const SplitText = ({
 	const words = text.split(" ").map((word) => word.split(""));
 	const letters = words.flat();
 	const [inView, setInView] = useState(false);
-	const ref = useRef();
+	const ref = useRef<HTMLParagraphElement | null>(null);
 	const animatedCount = useRef(0);
 
 	useEffect(() => {
+		if (!ref.current) return;
+
 		const observer = new IntersectionObserver(
 			([entry]) => {
 				if (entry.isIntersecting) {
 					setInView(true);
-					observer.unobserve(ref.current);
+					observer.unobserve(ref.current!);
 				}
 			},
 			{ threshold, rootMargin }
@@ -72,7 +87,7 @@ const SplitText = ({
 						return (
 							<animated.span
 								key={index}
-								style={springs[index]}
+								style={springs[index] as React.CSSProperties}
 								className="inline-block transform transition-opacity will-change-transform"
 							>
 								{letter}

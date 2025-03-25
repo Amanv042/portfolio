@@ -1,7 +1,18 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
 
-const FadeContent = ({
+interface FadeContentProps {
+	children: React.ReactNode;
+	blur?: boolean;
+	duration?: number;
+	easing?: string;
+	delay?: number;
+	threshold?: number;
+	initialOpacity?: number;
+	className?: string;
+}
+
+const FadeContent: React.FC<FadeContentProps> = ({
 	children,
 	blur = false,
 	duration = 1000,
@@ -12,7 +23,7 @@ const FadeContent = ({
 	className = "",
 }) => {
 	const [inView, setInView] = useState(false);
-	const ref = useRef(null);
+	const ref = useRef(null!);
 
 	useEffect(() => {
 		if (!ref.current) return;

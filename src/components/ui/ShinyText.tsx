@@ -1,4 +1,11 @@
-const ShinyText = ({ children, disabled = false, speed = 5, className = "" }) => {
+interface ShinyTextProps {
+	children: React.ReactNode;
+	disabled?: boolean;
+	speed?: number;
+	className?: string;
+}
+
+const ShinyText: React.FC<ShinyTextProps> = ({ children, disabled = false, speed = 5, className = "" }) => {
 	const animationDuration = `${speed}s`;
 
 	return (

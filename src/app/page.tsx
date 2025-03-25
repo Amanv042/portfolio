@@ -42,7 +42,7 @@ export default function Home() {
 								duration={1700}
 								delay={1100}
 							>
-								<p className="lg:text-2xl text-wrap">
+								<div className="lg:text-2xl text-wrap">
 									Feel free to connect with me on{" "}
 									<span>
 										<ShinyText
@@ -53,7 +53,7 @@ export default function Home() {
 												url="https://www.linkedin.com/in/aman-verma042/"
 												className="hover:underline"
 											>
-												<p className="text-red-400">LinkedIn</p>
+												<span className="text-red-400">LinkedIn</span>
 											</LinkPreview>
 										</ShinyText>
 									</span>{" "}
@@ -67,11 +67,11 @@ export default function Home() {
 												url="https://github.com/Amanv042"
 												className="hover:underline"
 											>
-												<p className="text-red-400">Github</p>
+												<span className="text-red-400">Github</span>
 											</LinkPreview>
 										</ShinyText>
 									</span>
-								</p>
+								</div>
 							</FadeContent>
 						</div>
 
