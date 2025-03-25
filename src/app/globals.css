@@ -134,8 +134,35 @@
 	}
 }
 
+@keyframes blur {
+	0% {
+		filter: blur(2);
+	}
+	50% {
+		filter: blur(10);
+	}
+	100% {
+		filter: blur(2);
+	}
+}
+
 @layer utilities {
 	.animate-shine {
 		animation: shine 5s linear infinite;
+	}
+	.animate-blur-1 {
+		animation: blur 2s linear infinite;
+	}
+	.animate-blur-2 {
+		animation: blur 4s linear infinite;
+	}
+	.animate-blur-3 {
+		animation: blur 1s linear infinite;
+	}
+	.animate-blur-4 {
+		animation: blur 3s linear infinite;
+	}
+	.animate-blur-5 {
+		animation: blur 6s linear infinite;
 	}
 }

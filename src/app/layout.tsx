@@ -26,7 +26,7 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange
 				>
-					<header className="fixed top-0 w-full z-10 py-4 px-4 bg-[rgba(255,255,255,0.1)] backdrop-blur-lg shadow-lg">
+					<header className="fixed top-0 w-full z-10 py-4 px-4">
 						<Navbar />
 					</header>
 					{children}

@@ -1,17 +1,17 @@
-"use client";
-import { useSprings, animated } from "@react-spring/web";
+"use client"
+import { useSprings, animated, SpringConfig } from "@react-spring/web";
 import { useEffect, useRef, useState } from "react";
 
 interface SplitTextProps {
 	text?: string;
 	className?: string;
 	delay?: number;
-	animationFrom?: Record<string, any>;
-	animationTo?: Record<string, any>;
+	animationFrom?: { opacity: number; transform: string };
+	animationTo?: { opacity: number; transform: string };
 	easing?: string;
 	threshold?: number;
 	rootMargin?: string;
-	textAlign?: React.CSSProperties["textAlign"];
+	textAlign?: "left" | "right" | "center" | "justify" | "start" | "end";
 	onLetterAnimationComplete?: () => void;
 }
 
@@ -21,7 +21,7 @@ const SplitText: React.FC<SplitTextProps> = ({
 	delay = 100,
 	animationFrom = { opacity: 0, transform: "translate3d(0,40px,0)" },
 	animationTo = { opacity: 1, transform: "translate3d(0,0,0)" },
-	easing = "easeOutCubic",
+	easing = (t: number) => t,
 	threshold = 0.1,
 	rootMargin = "-100px",
 	textAlign = "center",
@@ -30,23 +30,25 @@ const SplitText: React.FC<SplitTextProps> = ({
 	const words = text.split(" ").map((word) => word.split(""));
 	const letters = words.flat();
 	const [inView, setInView] = useState(false);
-	const ref = useRef<HTMLParagraphElement | null>(null);
+	const ref = useRef<HTMLParagraphElement>(null);
 	const animatedCount = useRef(0);
 
 	useEffect(() => {
-		if (!ref.current) return;
-
 		const observer = new IntersectionObserver(
 			([entry]) => {
 				if (entry.isIntersecting) {
 					setInView(true);
-					observer.unobserve(ref.current!);
+					if (ref.current) {
+						observer.unobserve(ref.current);
+					}
 				}
 			},
 			{ threshold, rootMargin }
 		);
 
-		observer.observe(ref.current);
+		if (ref.current) {
+			observer.observe(ref.current);
+		}
 
 		return () => observer.disconnect();
 	}, [threshold, rootMargin]);
@@ -56,7 +58,7 @@ const SplitText: React.FC<SplitTextProps> = ({
 		letters.map((_, i) => ({
 			from: animationFrom,
 			to: inView
-				? async (next) => {
+				? async (next: (props: any) => Promise<void>) => {
 						await next(animationTo);
 						animatedCount.current += 1;
 						if (animatedCount.current === letters.length && onLetterAnimationComplete) {
@@ -87,7 +89,7 @@ const SplitText: React.FC<SplitTextProps> = ({
 						return (
 							<animated.span
 								key={index}
-								style={springs[index] as React.CSSProperties}
+								style={springs[index] as unknown as React.CSSProperties}
 								className="inline-block transform transition-opacity will-change-transform"
 							>
 								{letter}
