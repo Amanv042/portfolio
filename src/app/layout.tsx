@@ -18,7 +18,7 @@ export default function RootLayout({
 		<html lang="en" suppressHydrationWarning>
 			<body className={`${poppins.variable} font-poppins antialiased`}>
 				<ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-					<header className="fixed top-0 w-full z-10 py-6 px-4">
+					<header className="fixed top-0 w-full z-10 h-20">
 						<Navbar />
 					</header>
 					<main className="pt-24">{children}</main>

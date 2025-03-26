@@ -26,7 +26,7 @@ const PageUrls = [
 export default function Navbar() {
 	const urlPath = usePathname();
 	return (
-		<nav className="custom-container flex items-center justify-between">
+		<nav className="custom-container flex items-center justify-between h-full">
 			<div>
 				<Link href="/" className="inline-block lg:text-2xl text-lg">
 					code<span className="text-cyan font-bold">by</span>aman
@@ -37,7 +37,7 @@ export default function Navbar() {
 					{PageUrls.map(({ name, path }, i) => (
 						<li
 							key={i}
-							className={`py-1 transition-all duration-300 hover:underline ${
+							className={`py-1 transition-all duration-300 after:content-[''] after:hidden hover:after:block after:w-full after:h-[2px] after:bg-cyan-400   ${
 								urlPath === path ? "text-cyan" : ""
 							}`}
 						>
@@ -64,7 +64,7 @@ export default function Navbar() {
 									<DrawerClose asChild>
 										<Link
 											key={i}
-											className={`inline-block py-1 transition-all duration-300 hover:underline border ${
+											className={`inline-block py-1 transition-all duration-300 hover:underline  px-4 ${
 												urlPath === path ? "text-cyan" : ""
 											}`}
 											href={path}
