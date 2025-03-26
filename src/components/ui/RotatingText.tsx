@@ -190,10 +190,7 @@ const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>(
 				transition={transition}
 			>
 				<span className="sr-only">{texts[currentTextIndex]}</span>
-				<AnimatePresence
-					mode={animatePresenceMode}
-					initial={animatePresenceInitial}
-				>
+				<AnimatePresence mode={animatePresenceMode} initial={animatePresenceInitial}>
 					<motion.div
 						key={currentTextIndex}
 						className={cn(
@@ -209,10 +206,7 @@ const RotatingText = forwardRef<RotatingTextRef, RotatingTextProps>(
 								.slice(0, wordIndex)
 								.reduce((sum, word) => sum + word.characters.length, 0);
 							return (
-								<span
-									key={wordIndex}
-									className={cn("inline-flex", splitLevelClassName)}
-								>
+								<span key={wordIndex} className={cn("inline-flex", splitLevelClassName)}>
 									{wordObj.characters.map((char, charIndex) => (
 										<motion.span
 											key={charIndex}

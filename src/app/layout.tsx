@@ -15,21 +15,13 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html
-			lang="en"
-			suppressHydrationWarning
-		>
+		<html lang="en" suppressHydrationWarning>
 			<body className={`${poppins.variable} font-poppins antialiased`}>
-				<ThemeProvider
-					attribute="class"
-					defaultTheme="dark"
-					enableSystem
-					disableTransitionOnChange
-				>
-					<header className="fixed top-0 w-full z-10 py-4 px-4">
+				<ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+					<header className="fixed top-0 w-full z-10 py-6 px-4">
 						<Navbar />
 					</header>
-					{children}
+					<main className="pt-24">{children}</main>
 				</ThemeProvider>
 			</body>
 		</html>

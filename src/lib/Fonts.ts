@@ -1,4 +1,4 @@
-import { Charm, Poppins } from "next/font/google";
+import {  Poppins, Akaya_Kanadaka } from "next/font/google";
 
 export const poppins = Poppins({
 	variable: "--font-poppins",
@@ -6,7 +6,7 @@ export const poppins = Poppins({
 	subsets: ["latin"],
 });
 
-export const charm = Charm({
-	weight: ["400", "700"],
-	subsets: ["latin"],
+export const akayaKanadaka = Akaya_Kanadaka({
+	weight: ["400"],
+	subsets: ["kannada"],
 });

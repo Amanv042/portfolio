@@ -112,10 +112,6 @@
 	--sidebar-ring: oklch(0.552 0.016 285.938);
 }
 
-@theme {
-	--font-charm: var(--font-charm);
-}
-
 @layer base {
 	* {
 		@apply border-border outline-ring/50;
@@ -126,7 +122,7 @@
 }
 
 .custom-container {
-	@apply lg:max-w-[80%] lg:p-0 max-w-full mx-auto px-2;
+	@apply lg:max-w-[80%] lg:p-0 max-w-full mx-auto px-4;
 }
 
 .text-cyan {
@@ -142,38 +138,5 @@
 	}
 	100% {
 		background-position: -100%;
-	}
-}
-
-@keyframes blur {
-	0% {
-		filter: blur(2);
-	}
-	50% {
-		filter: blur(10);
-	}
-	100% {
-		filter: blur(2);
-	}
-}
-
-@layer utilities {
-	.animate-shine {
-		animation: shine 5s linear infinite;
-	}
-	.animate-blur-1 {
-		animation: blur 2s linear infinite;
-	}
-	.animate-blur-2 {
-		animation: blur 4s linear infinite;
-	}
-	.animate-blur-3 {
-		animation: blur 1s linear infinite;
-	}
-	.animate-blur-4 {
-		animation: blur 3s linear infinite;
-	}
-	.animate-blur-5 {
-		animation: blur 6s linear infinite;
 	}
 }

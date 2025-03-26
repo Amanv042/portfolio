@@ -5,17 +5,45 @@ import Particles from "@/components/ui/Particles";
 import RotatingText from "@/components/ui/RotatingText";
 import ShinyText from "@/components/ui/ShinyText";
 import SplitText from "@/components/ui/SplitText";
-import { charm } from "@/lib/Fonts";
+import { akayaKanadaka } from "@/lib/Fonts";
+
+const texts = [
+	"React.js",
+	"Tailwind",
+	"Node.js",
+	"Session",
+	"Javascript",
+	"CSS",
+	"SASS",
+	"SCSS",
+	"Express.js",
+	"MongoDB",
+	"Postgres",
+	"Next.js",
+	"Dom",
+	"Authentication",
+	"Firebase",
+	"REST APIs",
+	"DevTools",
+	"Postman",
+	"Cookies",
+	"Figma",
+	"Github",
+	"Vercel",
+	"Netlify",
+	"Web Vitals",
+	"mySql",
+];
 
 export default function Home() {
 	return (
 		<>
-			<div className="grid place-content-center h-screen px-6 lg:px-0">
-				<div className="space-y-2">
-					<h1>
+			<div className="grid place-content-center lg:pt-56 md:pt-48 pt-44 px-4 lg:px-0">
+				<div className="space-y-2 px-10">
+					<h1 className="flex flex-col lg:flex-row md:flex-row">
 						<SplitText
 							text="Hello!"
-							className="lg:text-9xl text-6xl font-semibold text-cyan -ml-2"
+							className="text-8xl font-semibold text-cyan -ml-2 "
 							delay={150}
 							animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
 							animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
@@ -25,7 +53,7 @@ export default function Home() {
 						/>
 						<SplitText
 							text="I'm Aman"
-							className="lg:text-9xl text-6xl font-semibold -ml-2"
+							className="lg:text-8xl text-6xl font-semibold -ml-2"
 							delay={150}
 							animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
 							animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
@@ -35,55 +63,35 @@ export default function Home() {
 						/>
 					</h1>
 					<div className="lg:text-3xl">
-						<div className="flex ">
+						<div className="flex flex-wrap">
 							<BlurText
-								text="A full stack developer who codes in "
+								text="A full stack developer with expertise in "
 								animateBy="letters"
 								delay={20}
 								direction="bottom"
 							/>
-							<FadeContent
-								duration={1700}
-								delay={1500}
-							>
+							<FadeContent duration={1700} delay={1500}>
 								<RotatingText
-									texts={[
-										"React.js",
-										"Tailwind",
-										"Node.js",
-										"Javascript",
-										"Css",
-										"Sass",
-										"Scss",
-										"Express.js",
-										"MongoDB",
-										"Postgres",
-									]}
-									mainClassName={`bg-cyan text-black font-semibold overflow-hidden px-4 py-0.5 rounded-sm ${charm.className} font-charm antialiased transition-all`}
+									texts={texts}
+									mainClassName={`bg-cyan text-black px-4 rounded-sm font-semibold overflow-hidden ${akayaKanadaka.className} font-charm antialiased`}
 									staggerFrom={"first"}
 									initial={{ y: "100%" }}
 									animate={{ y: 0 }}
 									exit={{ y: "-120%" }}
 									staggerDuration={0.025}
 									splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-									transition={{ type: "spring", damping: 100, stiffness: 1000 }}
+									transition={{ type: "inartia", damping: 100, stiffness: 1000 }}
 									rotationInterval={2000}
 								/>
 							</FadeContent>
 						</div>
 					</div>
 					<div className="text-[rgba(255,255,255,0.3)]">
-						<FadeContent
-							duration={1700}
-							delay={2000}
-						>
+						<FadeContent duration={1700} delay={2000}>
 							<div className="lg:text-2xl text-wrap">
 								Feel free to connect with me on{" "}
 								<span>
-									<ShinyText
-										speed={3}
-										className="custom-class"
-									>
+									<ShinyText speed={3}>
 										<LinkPreview
 											url="https://www.linkedin.com/in/aman-verma042/"
 											className="hover:underline"
@@ -96,10 +104,7 @@ export default function Home() {
 								</span>{" "}
 								or follow me on{" "}
 								<span>
-									<ShinyText
-										speed={3}
-										className="custom-class"
-									>
+									<ShinyText speed={3}>
 										<LinkPreview
 											url="https://github.com/codebyamanv"
 											className="hover:underline"
