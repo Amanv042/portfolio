@@ -1,5 +1,6 @@
 import BlurText from "@/components/ui/BlurText";
 import FadeContent from "@/components/ui/FadeContent";
+import { FlipWords } from "@/components/ui/FlipWords";
 import { LinkPreview } from "@/components/ui/LinkPreview";
 import Particles from "@/components/ui/Particles";
 import RotatingText from "@/components/ui/RotatingText";
@@ -38,12 +39,12 @@ const texts = [
 export default function Home() {
 	return (
 		<>
-			<div className="grid place-content-center lg:pt-56 md:pt-48 pt-44 px-4 lg:px-0">
+			<div className="grid place-content-center lg:pt-56 md:pt-56 pt-44 px-4 lg:px-0">
 				<div className="space-y-2 px-10">
 					<div>
 						<SplitText
 							text="<Hello World!/>"
-							className="lg:text-8xl md:test-5xl text-4xl font-semibold text-cyan"
+							className="lg:text-8xl md:test-5xl sm:text-5xl text-3xl font-semibold text-cyan"
 							delay={150}
 							animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
 							animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
@@ -53,28 +54,19 @@ export default function Home() {
 						/>
 					</div>
 					<div className="lg:text-2xl">
-						<div className="flex flex-wrap">
-							<BlurText text="I'm Aman. A full stack developer, " animateBy="letters" delay={20} direction="bottom" />
+						<div className="flex flex-col lg:flex-row">
 							<BlurText
-								text="Expertise in "
+								text="I'm Aman. A full stack developer. "
 								animateBy="letters"
 								delay={20}
 								direction="bottom"
 							/>
-							<FadeContent duration={1700} delay={1500}>
-								<RotatingText
-									texts={texts}
-									mainClassName={`bg-cyan text-black px-4 rounded-sm font-semibold overflow-hidden ${akayaKanadaka.className} font-charm antialiased`}
-									staggerFrom={"first"}
-									initial={{ y: "100%" }}
-									animate={{ y: 0 }}
-									exit={{ y: "-120%" }}
-									staggerDuration={0.025}
-									splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-									transition={{ type: "inartia", damping: 100, stiffness: 1000 }}
-									rotationInterval={2000}
-								/>
-							</FadeContent>
+							<div className="flex">
+								<BlurText text="Expert in" animateBy="letters" delay={20} direction="bottom" />
+								<FadeContent duration={1700} delay={1500}>
+									<FlipWords words={texts} className="text-cyan font-bold " />
+								</FadeContent>
+							</div>
 						</div>
 					</div>
 					<div className="text-[rgba(255,255,255,0.3)]">

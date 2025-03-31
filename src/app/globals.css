@@ -122,7 +122,7 @@
 }
 
 .custom-container {
-	@apply lg:max-w-[80%] lg:p-0 max-w-full mx-auto px-4;
+	@apply lg:max-w-[80%] lg:p-0 max-w-[95%] mx-auto px-4;
 }
 
 .text-cyan {
@@ -130,6 +130,10 @@
 }
 .bg-cyan {
 	@apply bg-cyan-300;
+}
+
+.color-white {
+	@apply text-[#fafafa];
 }
 
 @keyframes shine {
