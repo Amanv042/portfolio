@@ -31,11 +31,11 @@ export function CarouselPlugin() {
 	const plugin = useRef(Autoplay({ delay: 2000 }));
 
 	return (
-		<Carousel plugins={[plugin.current]} className="w-full">
+		<Carousel plugins={[plugin.current]} className="w-full cursor-pointer">
 			<CarouselContent>
 				{imageArray.map((data, index) => (
 					<CarouselItem key={index}>
-						<div className="w-full h-[600px] rounded-lg overflow-hidden">
+						<div className="w-[90%] mx-auto h-[600px] rounded-lg overflow-hidden">
 							<Image
 								src={data.image}
 								alt={data.alternative}

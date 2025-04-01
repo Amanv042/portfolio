@@ -6,7 +6,7 @@ export default function Contact() {
 			<div className="custom-container">
 				<h1 className="text-center text-3xl lg:hidden md:hidden">Contact Me</h1>
 				<div className="p-8 flex lg:flex-row flex-col items-center justify-center gap-8">
-					<div className="flex-1 hidden lg:block md:block w-full rounded-lg overflow-hidden">
+					<div className="flex-1 hidden lg:block md:hidden mx-auto rounded-lg overflow-hidden">
 						<CarouselPlugin />
 					</div>
 					<form className="flex-1 space-y-4 flex flex-col justify-around">
@@ -24,19 +24,20 @@ export default function Contact() {
 							<input
 								type="text"
 								placeholder="name"
-								className="w-full border px-4 py-2 rounded-md  placeholder:text-white caret-cyan-400 outline-none border-cyan-900 transition-all"
+								className="w-full border px-4 py-2 rounded-md  placeholder:text-white caret-cyan-400 outline-none border-cyan-900 transition-all
+								focus-input-shadow"
 							/>
 							<input
 								type="email"
 								placeholder="example@gmail.com"
-								className="w-full border px-4 py-2 rounded-md  placeholder:text-white caret-cyan-400 outline-none border-cyan-900 transition-all"
+								className="w-full border px-4 py-2 rounded-md  placeholder:text-white caret-cyan-400 outline-none border-cyan-900 transition-all focus-input-shadow"
 							/>
 							<textarea
 								name="message"
 								id=""
 								rows={8}
-								placeholder="Type your message"
-								className="w-full border px-4 py-2 rounded-md  placeholder:text-white caret-cyan-400 outline-none border-cyan-900 resize-none transition-all"
+								placeholder="type your message"
+								className="w-full border px-4 py-2 rounded-md  placeholder:text-white caret-cyan-400 outline-none border-cyan-900 resize-none transition-all focus-input-shadow"
 							></textarea>
 							<button
 								type="submit"
