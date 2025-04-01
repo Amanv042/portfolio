@@ -2,8 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
 	images: {
-		domains: ["api.microlink.io"],
+		domains: ["images.pexels.com", "api.microlink.io"],
 	},
+
 	eslint: {
 		ignoreDuringBuilds: true,
 	},

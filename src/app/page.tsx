@@ -3,10 +3,8 @@ import FadeContent from "@/components/ui/FadeContent";
 import { FlipWords } from "@/components/ui/FlipWords";
 import { LinkPreview } from "@/components/ui/LinkPreview";
 import Particles from "@/components/ui/Particles";
-import RotatingText from "@/components/ui/RotatingText";
 import ShinyText from "@/components/ui/ShinyText";
 import SplitText from "@/components/ui/SplitText";
-import { akayaKanadaka } from "@/lib/Fonts";
 
 const texts = [
 	"React.js",

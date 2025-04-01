@@ -136,11 +136,28 @@
 	@apply text-[#fafafa];
 }
 
+@theme {
+	--animate-shine: shine 5s ease infinite;
+	--animate-wave: wave 5s ease infinite;
+}
+
 @keyframes shine {
 	0% {
 		background-position: 100%;
 	}
 	100% {
 		background-position: -100%;
+	}
+}
+
+@keyframes wave {
+	0% {
+		transform: rotate(10deg);
+	}
+	50% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(10deg);
 	}
 }
